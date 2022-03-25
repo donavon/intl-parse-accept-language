@@ -11,7 +11,7 @@ Returns an array of `locale` strings, sorted by quality, given the string from a
 ```ts
 import { parseAcceptLanguage } from 'intl-parse-accept-language';
 
-const locales = acceptLanguage('en-US,es;q=0.6,en;q=0.8,*;q=0.1');
+const locales = parseAcceptLanguage('en-US,es;q=0.6,en;q=0.8,*;q=0.1');
 // => ['en-US', 'en', 'es']
 ```
 
