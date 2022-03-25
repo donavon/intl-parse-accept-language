@@ -32,8 +32,7 @@ export const parseAcceptLanguage = (
       const [locale, q = 'q=1'] = lang.split(';');
       const trimmedLocale = locale.trim();
       const numQ = Number(q.replace(/q ?=/, ''));
-      if (isNaN(numQ)) return [0, trimmedLocale];
-      return [numQ, trimmedLocale];
+      return [isNaN(numQ) ? 0 : numQ, trimmedLocale];
     })
     .sort(([q1], [q2]) => q2 - q1)
     .flatMap(([_, locale]) => {
