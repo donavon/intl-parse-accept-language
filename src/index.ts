@@ -40,7 +40,6 @@ export const parseAcceptLanguage = (
       if (locale === '*' && ignoreWildcard) return [];
       try {
         return validate(locale) || [];
-        // return Intl.DateTimeFormat.supportedLocalesOf(locale);
       } catch {
         return [];
       }
